@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Auth from "./pages/Auth";
 import Home from "./pages/Home";
@@ -8,19 +8,29 @@ import SidebarLayout from "./components/Sidebar";
 
 function App() {
   const [username, setUsername] = useState<string>("omp28");
+  const location = useLocation();
 
   const handleUsernameChange = (newUsername: string) => {
     setUsername(newUsername);
   };
 
+  const isLoginPage = location.pathname === "/login";
+
   return (
-    <SidebarLayout onUsernameChange={handleUsernameChange}>
-      <Routes>
-        <Route path="/login" element={<Auth />} />
-        <Route path="/" element={<Home username={username} />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </SidebarLayout>
+    <>
+      {isLoginPage ? (
+        <Routes>
+          <Route path="/login" element={<Auth />} />
+        </Routes>
+      ) : (
+        <SidebarLayout onUsernameChange={handleUsernameChange}>
+          <Routes>
+            <Route path="/" element={<Home username={username} />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </SidebarLayout>
+      )}
+    </>
   );
 }
 

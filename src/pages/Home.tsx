@@ -57,15 +57,16 @@ const Home: React.FC<HomeProps> = ({ username }) => {
             {filter ? filter.length : 0} Total Repositories
           </p>
         </div>
+
         <div className="space-x-4 flex items mt-2 md:mt-0">
           <button
-            className="text-[11px] md:text-[12px] lg:text-base home-btn flex gap-3 items-center"
+            className="text-[11px] md:text-[12px] lg:text-base flex gap-3 items-center border border-[#d5d7da] shadow-sm shadow-[#0a0d12]/5 rounded-lg py-[7px] px-[10px] hover:shadow focus:shadow-inner"
             onClick={() => getRepositories(username)}
           >
             <TfiReload />
             Refresh All
           </button>
-          <button className="text-[11px] md:text-[12px] lg:text-base home-btn flex gap-2 items-center bg-[#1570EF] text-white">
+          <button className="text-[11px] md:text-[12px] lg:text-base flex gap-2 items-center bg-[#1570EF] text-white border border-[#d5d7da] shadow-sm shadow-[#0a0d12]/5 rounded-lg py-[7px] px-[10px] hover:shadow focus:shadow-inner">
             <IoAdd />
             Add Repository
           </button>
@@ -103,10 +104,10 @@ const Home: React.FC<HomeProps> = ({ username }) => {
                       </span>
                     </div>
                     <div className="flex md:justify-between w-full gap-3 md:max-w-[400px]">
-                      <p className="text-[9px] md:text-base flex items-center gap-1.5 md:gap-3">
+                      <div className="text-[9px] md:text-base flex items-center gap-1.5 md:gap-3">
                         {repo.language || "React"}
                         <div className="w-2 md:w-3 h-2 md:h-3 rounded-full bg-[#1570EF]"></div>
-                      </p>
+                      </div>
                       <p className="text-[9px] md:text-base flex items-center gap-1 md:gap-3">
                         <HiOutlineCircleStack /> {repo.size} KB
                       </p>

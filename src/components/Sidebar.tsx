@@ -58,11 +58,19 @@ const SidebarLayout: React.FC<SidebarProps> = ({
   const sampleUsers: SampleUser[] = [
     {
       value: "omp28",
-      label: "Omkumar Patel",
+      label: "Om Patel",
     },
     {
       value: "tanish111",
       label: "Tanish Desai",
+    },
+    {
+      value: "ssanidhya0407",
+      label: "Sanidhya Singh",
+    },
+    {
+      value: "Romit-Kumar18",
+      label: "Romit Kumar",
     },
   ];
 
@@ -90,7 +98,7 @@ const SidebarLayout: React.FC<SidebarProps> = ({
       </div>
 
       {isOpen && (
-        <div className="top-12 left-0 w-full fixed bg-white z-40 md:hidden">
+        <div className="fixed top-[72px] left-0 w-full bg-white z-40 md:hidden">
           <div className="p-4">
             <select
               className="w-full border p-2 rounded"
@@ -104,6 +112,7 @@ const SidebarLayout: React.FC<SidebarProps> = ({
               ))}
             </select>
           </div>
+
           <ul className="space-y-4 p-4">
             {navItems.map((navItem) => (
               <li key={navItem.path} onClick={toggleSidebar}>
@@ -123,7 +132,7 @@ const SidebarLayout: React.FC<SidebarProps> = ({
       <div className="hidden md:flex fixed top-0 left-0 h-screen w-64 flex-col justify-between">
         <div>
           <div className="flex items-center gap-3 mx-auto p-4">
-            <img src="/logo.svg" />
+            <img src="/codeantLogo.svg" alt="logo" />
             <h2 className="company-name text-xl md:text-2xl">CodeAnt AI</h2>
           </div>
           <div className="py-2 px-4">

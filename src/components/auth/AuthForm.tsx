@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Authentication from "./Authentication";
 
 const AuthForm: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const AuthForm: React.FC = () => {
             Welcome to CodeAnt AI
           </h1>
         </div>
+        <Authentication />
       </div>
       <p>
         By signing up you agree to the{" "}

@@ -52,12 +52,15 @@ const Authentication: React.FC<AuthTabsProps> = ({ defaultTab = "SAAS" }) => {
     <Tabs defaultValue={defaultTab}>
       <TabsList className="bg-[#FAFAFA] flex border mb-8 rounded-lg mx-3 md:mx-auto md:w-[95%] max-w-[624px]">
         <TabsTrigger
-          className="flex-1 p-3 active:bg-[#1570EF] tabs"
+          className="flex-1 p-3 text-[#414651] font-semibold data-[state=active]:bg-[#1570EF] data-[state=active]:text-white data-[state=active]:rounded-md data-[state=active]:font-bold"
           value="SAAS"
         >
           SAAS
         </TabsTrigger>
-        <TabsTrigger className="flex-1 p-3 tabs" value="SELF_HOSTED">
+        <TabsTrigger
+          className="flex-1 p-3 text-[#414651] font-semibold data-[state=active]:bg-[#1570EF] data-[state=active]:text-white data-[state=active]:rounded-md data-[state=active]:font-bold"
+          value="SELF_HOSTED"
+        >
           Self Hosted
         </TabsTrigger>
       </TabsList>
