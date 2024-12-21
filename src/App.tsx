@@ -1,30 +1,26 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Auth from "./pages/Auth";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
+import SidebarLayout from "./components/Sidebar";
 
 function App() {
-  const [username, setUsername] = useState<string>("utkarshdhairyapanwar");
+  const [username, setUsername] = useState<string>("omp28");
 
   const handleUsernameChange = (newUsername: string) => {
     setUsername(newUsername);
   };
 
   return (
-    <Routes>
-      <Route path="/login" element={<div>Login Page</div>} />
-      <Route
-        path="/"
-        element={
-          <div>
-            Home Page - {username}
-            <button onClick={() => handleUsernameChange("test")}>
-              Change Username
-            </button>
-          </div>
-        }
-      />
-      <Route path="*" element={<div>Not Found</div>} />
-    </Routes>
+    <SidebarLayout onUsernameChange={handleUsernameChange}>
+      <Routes>
+        <Route path="/login" element={<Auth />} />
+        <Route path="/" element={<Home username={username} />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </SidebarLayout>
   );
 }
 

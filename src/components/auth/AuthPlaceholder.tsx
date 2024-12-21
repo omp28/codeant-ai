@@ -26,7 +26,6 @@ const AuthPlaceholder: React.FC = () => {
       />
       <div className="relative min-w-[50%] px-5">
         <section className="shadow py-2 rounded-[24px]">
-          {/* Content remains the same, now type-safe */}
           {metrics.map((metric, index) => (
             <div className="flex flex-col items-center" key={index}>
               <h2 className="font-bold">{metric.heading}</h2>
